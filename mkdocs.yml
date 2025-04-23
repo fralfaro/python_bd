@@ -104,3 +104,8 @@ nav:
         - unit1/streaming.md
     - 📖 Unidad 2:
         - unit2/README.md
+        - unit2/introduction.md
+        - unit2/operaciones_basicas.md
+        - unit2/expresiones.md
+        - unit2/groupby.md
+        - unit2/lazy_mode.md

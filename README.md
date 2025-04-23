@@ -1,5 +1,9 @@
 # 📦 Python Big Data Engineering: Procesamiento, Análisis y Escalabilidad
 
+> Una guía integral para dominar el procesamiento y análisis de Big Data con Python.
+
+
+
 <img src="images/python.svg" alt="Banner del Curso" width="300" >
 
 

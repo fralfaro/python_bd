@@ -1,16 +1,19 @@
-# ⚡ Fundamentos de Polars
+# ⚡ Análisis de Datos con Polars
 
-La Unidad 2 está enfocada en **Polars**, una librería ultrarrápida para el análisis de datos en Python. Aprenderás a utilizar su API para trabajar con DataFrames de forma eficiente y moderna, aprovechando su motor basado en Rust y su enfoque orientado a expresiones.
+La Unidad 2 te introduce al procesamiento eficiente de datos tabulares utilizando **Polars**, una librería moderna desarrollada en Rust y diseñada para ofrecer **altísimo rendimiento** con una sintaxis declarativa en Python. Aprenderás a trabajar tanto en modo inmediato (eager) como en modo diferido (lazy), a transformar datos mediante expresiones, y a estructurar pipelines analíticos limpios y escalables.
+
+Esta unidad es clave para comprender cómo trabajar con grandes volúmenes de datos sin necesidad de clústeres distribuidos, aprovechando al máximo la capacidad de cómputo local.
 
 ---
 
 ## 🎯 Objetivos de la unidad
 
-- Comprender qué es Polars y sus ventajas frente a Pandas.
-- Cargar, manipular y explorar datos con DataFrames de Polars.
-- Realizar transformaciones encadenadas usando expresiones.
-- Utilizar `lazy mode` para optimizar consultas complejas.
-- Comparar performance con otras herramientas populares.
+- Comprender la filosofía y arquitectura de Polars.
+- Cargar y transformar datos usando la API expresiva de Polars.
+- Utilizar expresiones para crear nuevas columnas y condicionar valores.
+- Aplicar agregaciones y agrupaciones avanzadas sobre datos tabulares.
+- Optimizar flujos de trabajo con el modo lazy.
+- Comparar Polars con herramientas tradicionales como Pandas.
 
 ---
 
@@ -18,32 +21,33 @@ La Unidad 2 está enfocada en **Polars**, una librería ultrarrápida para el an
 
 | Tema | Descripción breve |
 |------|--------------------|
-| ⚙️ **Introducción a Polars** | ¿Qué es Polars? ¿Por qué es tan rápido? Primeros pasos. |
-| 🧪 **Operaciones Básicas** | Filtrado, selección, agregación, ordenamiento y unión de datos. |
-| 🔄 **Transformaciones con Expresiones** | Uso de `pl.col`, `pl.when`, `pl.group_by` y más. |
-| 💤 **Lazy Execution y Optimizaciones** | Cómo deferir ejecución para ganar eficiencia. |
-| 🧮 **Comparación con Pandas** | Benchmarking, memoria y tiempos de ejecución. |
-| 🔌 **Integración con otros entornos** | Google Colab, VS Code y notebooks Jupyter. |
+| ⚙️ **Introducción a Polars** | Qué es Polars, por qué fue creado y en qué contextos se recomienda usar. |
+| 📊 **Operaciones Básicas** | Carga de datos, selección, filtros y funciones exploratorias. |
+| 🧱 **Transformaciones con Expresiones** | Uso de `pl.col`, `pl.when`, `pl.lit`, y cómo construir pipelines limpios. |
+| 📈 **Agrupaciones y Agregaciones** | Agrupaciones simples y múltiples, funciones condicionales y personalizadas. |
+| 🧠 **Lazy Mode** | Construcción de pipelines diferidos y visualización del plan de ejecución. |
 
 ---
 
 ## 🧠 Recomendación
 
-Polars es muy expresivo y elegante cuando se utiliza correctamente. Te recomendamos practicar escribiendo múltiples transformaciones encadenadas, y explorar las ventajas del modo lazy para grandes datasets.
+Te sugerimos comenzar por la introducción conceptual para familiarizarte con las diferencias entre Polars y Pandas. Luego avanza gradualmente por los capítulos técnicos, experimentando en tus propios notebooks con los ejemplos entregados.
+
+Para aprovechar completamente el modo lazy, asegúrate de revisar `lazy_mode.md` después de entender bien cómo funcionan las expresiones en modo eager.
 
 ---
 
 ## 📚 Prerrequisitos
 
-- Conocimientos básicos de Python y Pandas
-- Experiencia trabajando con DataFrames
-- Entorno Python 3.9+ con Polars instalado (`pip install polars`)
+- Conocimientos básicos de Python y estructuras tipo `DataFrame`
+- Familiaridad con operaciones como filtrado, agrupación y transformación de columnas
+- Entorno con Python 3.9+ y Polars instalado (`pip install polars`)
 
 ---
 
 ## ✅ ¿Qué lograrás al finalizar esta unidad?
 
-- Analizar datos usando Polars de forma rápida y eficiente.
-- Aplicar transformaciones avanzadas con expresiones.
-- Optimizar consultas gracias al modo `lazy`.
-- Comparar herramientas y elegir la más adecuada para tu caso.
+- Manipular datos de forma eficiente con Polars en modo eager y lazy.
+- Escribir pipelines de análisis de datos expresivos y optimizados.
+- Utilizar expresiones declarativas en lugar de código imperativo.
+- Comparar el rendimiento entre Polars y otras librerías como Pandas.
