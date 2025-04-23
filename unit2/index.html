@@ -16,13 +16,15 @@
         <link rel="prev" href="../unit1/streaming/">
       
       
+        <link rel="next" href="introduction/">
+      
       
       <link rel="icon" href="../images/icon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.25">
     
     
       
-        <title>⚡ Fundamentos de Polars - Python Big Data Engineering</title>
+        <title>⚡ Análisis de Datos con Polars - Python Big Data Engineering</title>
       
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fundamentos-de-polars" class="md-skip">
+        <a href="#analisis-de-datos-con-polars" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -109,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ⚡ Fundamentos de Polars
+              ⚡ Análisis de Datos con Polars
             
           </span>
         </div>
@@ -658,6 +660,16 @@
           
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
       
@@ -686,6 +698,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
@@ -695,6 +712,111 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción a Polars
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operaciones_basicas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operaciones básicas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expresiones/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transformaciones (expresiones)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="groupby/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agrupaciones y Agregaciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lazy_mode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lazy Mode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -790,16 +912,18 @@
                   
 
 
-<h1 id="fundamentos-de-polars">⚡ Fundamentos de Polars</h1>
-<p>La Unidad 2 está enfocada en <strong>Polars</strong>, una librería ultrarrápida para el análisis de datos en Python. Aprenderás a utilizar su API para trabajar con DataFrames de forma eficiente y moderna, aprovechando su motor basado en Rust y su enfoque orientado a expresiones.</p>
+<h1 id="analisis-de-datos-con-polars">⚡ Análisis de Datos con Polars</h1>
+<p>La Unidad 2 te introduce al procesamiento eficiente de datos tabulares utilizando <strong>Polars</strong>, una librería moderna desarrollada en Rust y diseñada para ofrecer <strong>altísimo rendimiento</strong> con una sintaxis declarativa en Python. Aprenderás a trabajar tanto en modo inmediato (eager) como en modo diferido (lazy), a transformar datos mediante expresiones, y a estructurar pipelines analíticos limpios y escalables.</p>
+<p>Esta unidad es clave para comprender cómo trabajar con grandes volúmenes de datos sin necesidad de clústeres distribuidos, aprovechando al máximo la capacidad de cómputo local.</p>
 <hr />
 <h2 id="objetivos-de-la-unidad">🎯 Objetivos de la unidad</h2>
 <ul>
-<li>Comprender qué es Polars y sus ventajas frente a Pandas.</li>
-<li>Cargar, manipular y explorar datos con DataFrames de Polars.</li>
-<li>Realizar transformaciones encadenadas usando expresiones.</li>
-<li>Utilizar <code>lazy mode</code> para optimizar consultas complejas.</li>
-<li>Comparar performance con otras herramientas populares.</li>
+<li>Comprender la filosofía y arquitectura de Polars.</li>
+<li>Cargar y transformar datos usando la API expresiva de Polars.</li>
+<li>Utilizar expresiones para crear nuevas columnas y condicionar valores.</li>
+<li>Aplicar agregaciones y agrupaciones avanzadas sobre datos tabulares.</li>
+<li>Optimizar flujos de trabajo con el modo lazy.</li>
+<li>Comparar Polars con herramientas tradicionales como Pandas.</li>
 </ul>
 <hr />
 <h2 id="contenidos">📚 Contenidos</h2>
@@ -813,47 +937,44 @@
 <tbody>
 <tr>
 <td>⚙️ <strong>Introducción a Polars</strong></td>
-<td>¿Qué es Polars? ¿Por qué es tan rápido? Primeros pasos.</td>
+<td>Qué es Polars, por qué fue creado y en qué contextos se recomienda usar.</td>
 </tr>
 <tr>
-<td>🧪 <strong>Operaciones Básicas</strong></td>
-<td>Filtrado, selección, agregación, ordenamiento y unión de datos.</td>
+<td>📊 <strong>Operaciones Básicas</strong></td>
+<td>Carga de datos, selección, filtros y funciones exploratorias.</td>
 </tr>
 <tr>
-<td>🔄 <strong>Transformaciones con Expresiones</strong></td>
-<td>Uso de <code>pl.col</code>, <code>pl.when</code>, <code>pl.group_by</code> y más.</td>
+<td>🧱 <strong>Transformaciones con Expresiones</strong></td>
+<td>Uso de <code>pl.col</code>, <code>pl.when</code>, <code>pl.lit</code>, y cómo construir pipelines limpios.</td>
 </tr>
 <tr>
-<td>💤 <strong>Lazy Execution y Optimizaciones</strong></td>
-<td>Cómo deferir ejecución para ganar eficiencia.</td>
+<td>📈 <strong>Agrupaciones y Agregaciones</strong></td>
+<td>Agrupaciones simples y múltiples, funciones condicionales y personalizadas.</td>
 </tr>
 <tr>
-<td>🧮 <strong>Comparación con Pandas</strong></td>
-<td>Benchmarking, memoria y tiempos de ejecución.</td>
-</tr>
-<tr>
-<td>🔌 <strong>Integración con otros entornos</strong></td>
-<td>Google Colab, VS Code y notebooks Jupyter.</td>
+<td>🧠 <strong>Lazy Mode</strong></td>
+<td>Construcción de pipelines diferidos y visualización del plan de ejecución.</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="recomendacion">🧠 Recomendación</h2>
-<p>Polars es muy expresivo y elegante cuando se utiliza correctamente. Te recomendamos practicar escribiendo múltiples transformaciones encadenadas, y explorar las ventajas del modo lazy para grandes datasets.</p>
+<p>Te sugerimos comenzar por la introducción conceptual para familiarizarte con las diferencias entre Polars y Pandas. Luego avanza gradualmente por los capítulos técnicos, experimentando en tus propios notebooks con los ejemplos entregados.</p>
+<p>Para aprovechar completamente el modo lazy, asegúrate de revisar <code>lazy_mode.md</code> después de entender bien cómo funcionan las expresiones en modo eager.</p>
 <hr />
 <h2 id="prerrequisitos">📚 Prerrequisitos</h2>
 <ul>
-<li>Conocimientos básicos de Python y Pandas</li>
-<li>Experiencia trabajando con DataFrames</li>
-<li>Entorno Python 3.9+ con Polars instalado (<code>pip install polars</code>)</li>
+<li>Conocimientos básicos de Python y estructuras tipo <code>DataFrame</code></li>
+<li>Familiaridad con operaciones como filtrado, agrupación y transformación de columnas</li>
+<li>Entorno con Python 3.9+ y Polars instalado (<code>pip install polars</code>)</li>
 </ul>
 <hr />
 <h2 id="que-lograras-al-finalizar-esta-unidad">✅ ¿Qué lograrás al finalizar esta unidad?</h2>
 <ul>
-<li>Analizar datos usando Polars de forma rápida y eficiente.</li>
-<li>Aplicar transformaciones avanzadas con expresiones.</li>
-<li>Optimizar consultas gracias al modo <code>lazy</code>.</li>
-<li>Comparar herramientas y elegir la más adecuada para tu caso.</li>
+<li>Manipular datos de forma eficiente con Polars en modo eager y lazy.</li>
+<li>Escribir pipelines de análisis de datos expresivos y optimizados.</li>
+<li>Utilizar expresiones declarativas en lugar de código imperativo.</li>
+<li>Comparar el rendimiento entre Polars y otras librerías como Pandas.</li>
 </ul><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
@@ -1011,6 +1132,22 @@ function resetFieldset(fieldset) {
             </div>
           </a>
         
+        
+          
+          <a href="introduction/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Introducción a Polars">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Introducción a Polars
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
